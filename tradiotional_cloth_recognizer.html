@@ -1,0 +1,52 @@
+---
+title: Home
+layout: page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditional Cloth Recognizer</title>
+    <script>
+  document.getElementById('upload-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    var fileInput = document.getElementById('image-upload');
+    var file = fileInput.files[0];
+
+    var formData = new FormData();
+    formData.append('image', file);
+
+    fetch('https://arju10-traditional-cloth-recognizer.hf.space', {
+      method: 'POST',
+      body: formData
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        var resultElement = document.getElementById('result');
+        resultElement.textContent = 'Predicted category: ' + data.category;
+      })
+      .catch(function (error) {
+        console.log('Error:', error);
+      });
+  });
+</script>
+
+</head>
+<body>
+    <div class="container">
+  <h1>Food Image recognizer</h1>
+  <form id="upload-form">
+    <input type="file" id="image-upload" accept="image/*" />
+    <button type="submit">Upload</button>
+  </form>
+  <div id="result"></div>
+</div>
+
+</body>
+</html>

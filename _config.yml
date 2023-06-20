@@ -1,0 +1,9 @@
+remote_theme: daviddarnes/alembic@main
+plugins:
+- jekyll-remote-theme
+
+title: Traditional Cloth Recognizer
+description: An image classification API that classifies 23 different types of traditional cloth around the world
+
+author:
+  name: Arju
