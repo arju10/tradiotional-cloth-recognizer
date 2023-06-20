@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Home
 layout: page
 ---
@@ -49,4 +49,109 @@ layout: page
 </div>
 
 </body>
+</html> -->
+
+
+
+<!-- 2nd -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Recognition</title>
+  <style>
+    .image-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function recognizeImage() {
+      var imageFile = document.getElementById("image").files[0];
+
+      // Create a new FormData object
+      var formData = new FormData();
+      formData.append("image", imageFile);
+
+      // Send a POST request to your image recognition API
+      fetch("https://arju10-traditional-cloth-recognizer.hf.space", {
+        method: "POST",
+        body: formData
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        // Display the image and accuracy levels
+        document.getElementById("uploaded-image").src = URL.createObjectURL(imageFile);
+        document.getElementById("accuracy-levels").innerText = JSON.stringify(data);
+      })
+      .catch(function(error) {
+        console.log("Error:", error);
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>Image Recognition</h1>
+  <input type="file" id="image">
+  <button onclick="recognizeImage()">Recognize</button>
+
+  <div class="image-container">
+    <img id="uploaded-image" src="" alt="Uploaded Image" width="300">
+    <div id="accuracy-levels"></div>
+  </div>
+</body>
 </html>
+
+
+
+<!-- 3rd -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Image Recognition</title>
+  <style>
+    .image-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function recognizeImage() {
+      var inputElement = document.getElementById("image");
+      var file = inputElement.files[0];
+
+      var formData = new FormData();
+      formData.append("image", file);
+
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://arju10-traditional-cloth-recognizer.hf.space", true);
+      request.onload = function() {
+        if (request.status === 200) {
+          var response = JSON.parse(request.responseText);
+          document.getElementById("uploaded-image").src = URL.createObjectURL(file);
+          document.getElementById("accuracy-levels").innerText = JSON.stringify(response);
+        } else {
+          console.error("Request failed. Status:", request.status);
+        }
+      };
+      request.onerror = function() {
+        console.error("An error occurred while sending the request.");
+      };
+      request.send(formData);
+    }
+  </script>
+</head>
+<body>
+  <h1>Image Recognition</h1>
+  <input type="file" id="image">
+  <button onclick="recognizeImage()">Recognize</button>
+
+  <div class="image-container">
+    <img id="uploaded-image" src="" alt="Uploaded Image" width="300">
+    <div id="accuracy-levels"></div>
+  </div>
+</body>
+</html> -->
