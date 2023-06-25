@@ -127,21 +127,15 @@ layout: page
       var formData = new FormData();
       formData.append("file", imageFile);
 
-      // Create a list containing the image data
-      var dataList = [formData.get("file")];
-
       // Create the request payload
       var payload = {
-        data: dataList
+        data: formData
       };
 
       // Send a POST request to your image recognition API
-      fetch("https://arju10-traditional-cloth-recognizer.hf.space/run/predict", {
+      fetch("https://arju10-traditional-cloth-recognizer.hf.space/predict", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
+        body: payload
       })
       .then(function(response) {
         return response.json();
@@ -150,9 +144,9 @@ layout: page
         // Log the response object to the console for debugging
         console.log(data);
 
-        // Display the image and accuracy levels
+        // Display the image and the predicted label
         document.getElementById("uploaded-image").src = URL.createObjectURL(imageFile);
-        document.getElementById("accuracy-levels").innerText = JSON.stringify(data);
+        document.getElementById("predicted-label").innerText = data.label;
       })
       .catch(function(error) {
         console.log("Error:", error);
@@ -167,8 +161,31 @@ layout: page
 
   <div class="image-container">
     <img id="uploaded-image" src="" alt="Uploaded Image" width="300">
-    <div id="accuracy-levels"></div>
+    <p id="predicted-label"></p>
   </div>
 </body>
 </html>
 
+
+
+
+
+<!-- 4th -->
+<!-- <input id="photo" type="file">
+<div id="results"></div>
+<script>
+    async function loaded(reader) {   
+    const response = await fetch("https://arju10-traditional-cloth-recognizer.hf.space/run/predict", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({data: [reader.result]})});
+    const json = await response.json();
+    const label = json['data'][0]['label'];
+    results.innerHTML = `<br/> <img src = "${reader.result}" width="500"> <p>${label}</p>`;
+    }
+    function read() {
+        const reader = new FileReader();
+        reader.addEventListener('load', () => loaded(reader))
+        reader.readAsDataURL(photo.files[0]);
+    }
+    photo.addEventListener('input', read);
+</script> -->
