@@ -128,10 +128,9 @@ layout: page
       formData.append("file", imageFile);
 
       // Convert the FormData to a JSON object
-      var jsonData = {};
-      for (var entry of formData.entries()) {
-        jsonData[entry[0]] = entry[1];
-      }
+      var jsonData = {
+        data: formData.get("file")
+      };
 
       // Send a POST request to your image recognition API
       fetch("https://arju10-traditional-cloth-recognizer.hf.space/run/predict", {
