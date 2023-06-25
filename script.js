@@ -13,5 +13,6 @@ classifyButton.addEventListener('click', async () => {
   });
 
   const result = await response.json();
+  console.log(result)
   resultLabel.textContent = `Label: ${result.label}`;
 });
