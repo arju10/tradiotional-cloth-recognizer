@@ -127,9 +127,12 @@ layout: page
       var formData = new FormData();
       formData.append("file", imageFile);
 
-      // Convert the FormData to a JSON object
-      var jsonData = {
-        data: formData.get("file")
+      // Create a list containing the image data
+      var dataList = [formData.get("file")];
+
+      // Create the request payload
+      var payload = {
+        data: dataList
       };
 
       // Send a POST request to your image recognition API
@@ -138,7 +141,7 @@ layout: page
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(jsonData)
+        body: JSON.stringify(payload)
       })
       .then(function(response) {
         return response.json();
