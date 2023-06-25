@@ -3,7 +3,7 @@ title: Traditional Cloth Recognizer
 layout: page
 ---
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +49,7 @@ layout: page
 </div>
 
 </body>
-</html> -->
+</html>
 
 
 
@@ -147,33 +147,4 @@ layout: page
   </script>
 </body>
 </html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <input type="file" class="form-control" id="photo">
-  <div id="results"></div>
-  <script>
-    import { client } from "@gradio/client";
-
-
-async function run() {
-
-	const app = await client("https://arju10-traditional-cloth-recognizer.hf.space/");
-	const result = await app.predict("/load_example", [		
-				"Howdy!", // string  in 'parameter_11' Dataset component
-	]);
-
-	console.log(result?.data);
-}
-
-run();
-  </script>
-</body>
-</html>
 
