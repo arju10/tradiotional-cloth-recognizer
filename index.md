@@ -8,26 +8,26 @@ layout: page
 
 **Categories:**
 
--	1	.	   "kimono (Japan)",
--	2	.	    "hanbok (South Korea)",
--	3	.	    "cheongsam/qipao (China)",
--	4	.	    "sari (India)",
--	5	.	    "thawb/dishdasha (Saudi Arabia)",
--	6	.	    "dirndl (Germany)",
--	7	.	    "kilt (Scotland)",
--	8	.	    "ao dai (Vietnam)",
--	9	.	    "boubou (West Africa)",
--	10	.	    "huipil (Mexico)",
--	11	.	    "sarong (Indonesia)",
--	12	.	    "chador (Iran)",
--	13	.	    "traje de flamenca (Spain)",
--	14	.	    "batik (Malaysia)",
--	15	.	    "thobe (Palestine)",
--	16	.	    "national dress (Norway)",
--	17	.	    "national costume (Philippines)",
--	18	.	    "barong tagalog (Philippines)",
--	19	.	    "abaya (United Arab Emirates)",
--	20	.	    "folkdräkt (Sweden)",
--	21	.	    "ao po'i (Paraguay)",
--	22	.	    "pounamu piupiu (New Zealand)",
--	23	.	    "kaftan (Morocco)"
+1. KIMONO (JAPAN)
+2. HANBOK (SOUTH KOREA)
+3. CHEONGSAM/QIPAO (CHINA)
+4. SARI (INDIA)
+5. THAWB/DISHDASHA (SAUDI ARABIA)
+6. DIRNDL (GERMANY)
+7. KILT (SCOTLAND)
+8. AO DAI (VIETNAM)
+9. BOUBOU (WEST AFRICA)
+10. HUIPIL (MEXICO)
+11. SARONG (INDONESIA)
+12. CHADOR (IRAN)
+13. TRAJE DE FLAMENCA (SPAIN)
+14. BATIK (MALAYSIA)
+15. THOBE (PALESTINE)
+16. NATIONAL DRESS (NORWAY)
+17. NATIONAL COSTUME (PHILIPPINES)
+18. BARONG TAGALOG (PHILIPPINES)
+19. ABAYA (UNITED ARAB EMIRATES)
+20. FOLKDRÄKT (SWEDEN)
+21. AO PO'I (PARAGUAY)
+22. POUNAMU PIUPIU (NEW ZEALAND)
+23. KAFTAN (MOROCCO)
